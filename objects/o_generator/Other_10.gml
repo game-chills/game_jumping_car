@@ -451,3 +451,129 @@ if (generator_current.type == GENERATOR_TYPES.ITERATOR) {
 	}
 }
 #endregion
+
+#region GENERATOR_TYPES.ELEVATOR
+if (generator_current.type == GENERATOR_TYPES.ELEVATOR) {
+	/* input */
+	var _metadata = generator_current.metadata;
+	var _from_x = generator_current.last_position_block.x
+	var _from_y = generator_current.last_position_block.y
+	
+	/* constants */
+	
+	var _const_up_height_min = 250;
+	var _const_up_height_max = 360;
+	
+	/* variables */
+	var _desired = (
+		generator_current.last_position_block.x > _const_center_x
+		? -1
+		: 1
+	);
+	var _random_sign = choose(1, -1, _desired, _desired, -_metadata.previous_sign);
+	
+	/* mutation */
+	_metadata.previous_sign = _random_sign;
+	
+	/* vars */
+	var _mstype;
+	var _height;
+	var _pos_x;
+	var _pos_y;
+	var _count;
+	var _teleport_pos;
+	var _inst_move;
+	var i;
+	
+	/* part - static */
+	_mstype = "elevator:part:static"
+		
+	_height = random_range(
+		_const_up_height_min,
+		_const_up_height_max
+	);
+		
+	_pos_x = random_range(
+		_const_for__o_platform__min_x,
+		_const_for__o_platform__max_x
+	);
+	_pos_y = generator_current.last_position_block.y - _height
+		
+	push_block(_pos_x, _pos_y, o_platform, _mstype, _height);
+	
+	/* part - disposable */
+	
+	_mstype = "elevator:part:disposable"
+	_count = irandom(2)
+	
+	for (i = 0; i < _count; ++i) {
+		_height = random_range(
+			_const_up_height_min,
+			_const_up_height_max
+		);
+	
+		_pos_x = generator_current.last_position_block.x + random_range(250, 650) * _random_sign
+		_pos_y = generator_current.last_position_block.y - _height
+		
+		_pos_x = clamp(
+			_pos_x,
+			_const_for__o_platform__min_x,
+			_const_for__o_platform__max_x
+		);
+		
+		if (abs(generator_current.last_position_block.x - _pos_x) < 200) {
+			_pos_x = generator_current.last_position_block.x - random_range(250, 650) * _random_sign
+			_pos_x = clamp(
+				_pos_x,
+				_const_for__o_platform__min_x,
+				_const_for__o_platform__max_x
+			);
+		}
+		
+		push_block(_pos_x, _pos_y, o_platform_disposable, _mstype, _height);
+	}
+	
+	/* part - moving */
+	_mstype = "elevator:part:move"
+	
+	var _teleport_pos =
+		generator_current.last_position_block.x > _const_center_x
+		? {
+			from: _const_for__o_platform__min_x,
+			to: _const_for__o_platform__max_x,
+			direction: 1
+		}
+		: {
+			from: _const_for__o_platform__max_x,
+			to: _const_for__o_platform__min_x,
+			direction: -1
+		}
+		
+	_pos_x = _teleport_pos.from + random_range(0, 150) * _teleport_pos.direction
+	_pos_y = generator_current.last_position_block.y - _height;
+		
+	_inst_move = push_block(
+		_pos_x, 
+		_pos_y, 
+		o_platform_move,
+		_mstype,
+		_height
+	); 
+		
+	_height = random_range(
+		_const_up_height_min * 1.4,
+		_const_up_height_max * 1.4
+	);
+		
+	_inst_move.move_x2 = _teleport_pos.to - random_range(0, 150) * _teleport_pos.direction
+	_inst_move.move_y2 = generator_current.last_position_block.y - _height;
+		
+	generator_current.last_position_block.x = _inst_move.move_x2;
+	generator_current.last_position_block.y -= _height
+	generator_current.zona.y.lost -= _height
+}
+#endregion 
+
+
+
+

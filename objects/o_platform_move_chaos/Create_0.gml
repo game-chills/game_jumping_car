@@ -21,8 +21,7 @@ GlobalEventEmitter("ev:move_chaos").on("collision", function(_props) {
 		move_sign = move_p == 1 ? -1 : 1;
 	}
 	
-	var _complexity = 0.25;
-	move_p += _complexity * move_sign;
+	move_p += 0.25 * move_sign;
 	move_p = clamp(move_p, 0, 1);
 	
 	if (move_sign == -1 && _is_direct_collision) {
@@ -42,6 +41,4 @@ GlobalEventEmitter("ev:move_chaos").on("collision", function(_props) {
 	
 	move_x = move_x1 + _vector.x;
 	move_y = move_y1 + _vector.y;
-	
-	show_debug_message([move_x, move_y])
 })

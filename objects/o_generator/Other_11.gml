@@ -4,5 +4,6 @@ push_generator(
 	choose(
 		GENERATOR_TYPES.ITERATOR, 
 		GENERATOR_TYPES.LADDER,
+		GENERATOR_TYPES.ELEVATOR,
 	)
 );

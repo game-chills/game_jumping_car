@@ -6,19 +6,26 @@ events = new EventEmitter();
 GENERATOR_TYPES = {
 	LADDER: "LADDER",
 	ITERATOR: "ITERATOR",
+	ELEVATOR: "ELEVATOR",
 }
 
 GENERATOR_METAPROPS = {
 	LADDER: {
 		zona_range: {
 			min: room_height * 0.8,
-			max: room_height * 1.5,
+			max: room_height * 2,
 		}
 	},
 	ITERATOR: {
 		zona_range: {
 			min: room_height * 1.5,
-			max: room_height * 3,
+			max: room_height * 2.5,
+		}
+	},
+	ELEVATOR: {
+		zona_range: {
+			min: room_height * 1.2,
+			max: room_height * 2.2,
 		}
 	}
 }
@@ -106,6 +113,14 @@ function push_generator(_type, _is_first_block=false) {
 			};
 			return;
 		}
+		case GENERATOR_TYPES.ELEVATOR: {
+			generator_current.zona.y.lost = irandom_range(
+				GENERATOR_METAPROPS.ELEVATOR.zona_range.min,
+				GENERATOR_METAPROPS.ELEVATOR.zona_range.max
+			);
+			_metadata.previous_sign = 1
+			return;
+		} 
 		
 		default: 
 			return push_generator(GENERATOR_TYPES.LADDER, _is_first_block);
