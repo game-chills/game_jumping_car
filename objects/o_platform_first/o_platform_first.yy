@@ -6,8 +6,8 @@
   "name":"o_platform_first",
   "overriddenProperties":[],
   "parent":{
-    "name":"jumping_car",
-    "path":"jumping_car.yyp",
+    "name":"o_platforms",
+    "path":"folders/o_platforms.yy",
   },
   "parentObjectId":{
     "name":"o_platform",
@@ -29,7 +29,7 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":false,
+  "solid":true,
   "spriteId":{
     "name":"s_platform_first",
     "path":"sprites/s_platform_first/s_platform_first.yy",

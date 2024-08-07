@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"jumping_car",
-    "path":"jumping_car.yyp",
+    "name":"s_backgrounds",
+    "path":"folders/s_backgrounds.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

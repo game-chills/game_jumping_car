@@ -67,6 +67,13 @@
 		return self.__y;	
 	}
 	
+	function pos() {
+		return {
+			x: self.__x,
+			y: self.__y,
+		}
+	}
+	
 	function angle() {
 		return point_direction(
 			0,
@@ -162,6 +169,10 @@
 
 function vec2(_x=0, _y=_x) {
 	return new __Vec2(_x, _y);
+}
+
+function vec2_line(_x1, _y1, _x2, _y2) {
+	return new __Vec2(_x2 - _x1, _y2 - _y1);
 }
 
 function vec2_speed(_dir, _len=1) {

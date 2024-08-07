@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"jumping_car",
-    "path":"jumping_car.yyp",
+    "name":"sprites",
+    "path":"folders/o_platforms/sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -5,6 +5,7 @@ events = new EventEmitter();
 /* const */
 GENERATOR_TYPES = {
 	LADDER: "LADDER",
+	ITERATOR: "ITERATOR",
 }
 
 GENERATOR_METAPROPS = {
@@ -13,6 +14,12 @@ GENERATOR_METAPROPS = {
 			min: room_height * 0.8,
 			max: room_height * 1.5,
 		}
+	},
+	ITERATOR: {
+		zona_range: {
+			min: room_height * 1.5,
+			max: room_height * 3,
+		}
 	}
 }
 
@@ -20,6 +27,7 @@ GENERATOR_METAPROPS = {
 generator_current = {
 	type: GENERATOR_TYPES.LADDER,
 	is_first_block: true,
+	is_start: true,
 	metadata: {},
 	zona: {
 		y: {
@@ -61,6 +69,7 @@ function push_generator(_type, _is_first_block=false) {
 	generator_current = {
 		type: _type,
 		is_first_block: _is_first_block,
+		is_start: true,
 		metadata: _metadata,
 		zona: {
 			y: {
@@ -83,6 +92,18 @@ function push_generator(_type, _is_first_block=false) {
 				GENERATOR_METAPROPS.LADDER.zona_range.max
 			);
 			_metadata.previous_sign = 1
+			return;
+		}
+		case GENERATOR_TYPES.ITERATOR: {
+			generator_current.zona.y.lost = irandom_range(
+				GENERATOR_METAPROPS.ITERATOR.zona_range.min,
+				GENERATOR_METAPROPS.ITERATOR.zona_range.max
+			);
+			_metadata.stage = {
+				type: "disposable",
+				length: irandom_range(2, 3),
+				time: get_timer(),
+			};
 			return;
 		}
 		

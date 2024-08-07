@@ -26,7 +26,15 @@ if (move_speed_y > 0) {
 	var _has_collision = check_collision_block(x, y, bbox_bottom);
 	
 	if (_has_collision.has_collision) {
-		move_speed_y = -28;	
+		move_speed_y = -28;
+		
+		if (_has_collision.first.object_index == o_platform_move_chaos) {
+			GlobalEventEmitter("ev:move_chaos")
+				.emit("collision", {
+					selector: _has_collision.first.selector,
+					direct_collision_id: _has_collision.first.id
+				});
+		}
 	}
 }
 

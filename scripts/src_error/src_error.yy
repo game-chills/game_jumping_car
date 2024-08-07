@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"src_error",
   "parent":{
-    "name":"jumping_car",
-    "path":"jumping_car.yyp",
+    "name":"common_scripts",
+    "path":"folders/common_scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

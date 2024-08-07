@@ -10,8 +10,8 @@
   "name":"o_car",
   "overriddenProperties":[],
   "parent":{
-    "name":"jumping_car",
-    "path":"jumping_car.yyp",
+    "name":"o_cars",
+    "path":"folders/o_cars.yy",
   },
   "parentObjectId":null,
   "persistent":false,

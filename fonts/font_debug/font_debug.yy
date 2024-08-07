@@ -239,8 +239,8 @@
   "maintainGms1Font":false,
   "name":"font_debug",
   "parent":{
-    "name":"jumping_car",
-    "path":"jumping_car.yyp",
+    "name":"common_fonts",
+    "path":"folders/common_fonts.yy",
   },
   "pointRounding":0,
   "ranges":[

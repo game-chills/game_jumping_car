@@ -13,8 +13,8 @@
   "name":"o_generator",
   "overriddenProperties":[],
   "parent":{
-    "name":"jumping_car",
-    "path":"jumping_car.yyp",
+    "name":"o_controllers",
+    "path":"folders/o_controllers.yy",
   },
   "parentObjectId":null,
   "persistent":false,
