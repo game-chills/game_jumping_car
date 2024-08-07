@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"src_error",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"src_error",
+  "parent":{
+    "name":"jumping_car",
+    "path":"jumping_car.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

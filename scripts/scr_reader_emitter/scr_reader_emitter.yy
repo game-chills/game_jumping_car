@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_reader_emitter",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_reader_emitter",
+  "parent":{
+    "name":"jumping_car",
+    "path":"jumping_car.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
