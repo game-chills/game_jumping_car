@@ -4,6 +4,7 @@ if (keyboard_check_pressed(ord("R"))) {
 	GlobalEventEmitterClear();
 	GlobalReaderEmitterClear();
 	
+	audio_stop_all();
 	room_restart();
 }
 
