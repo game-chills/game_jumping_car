@@ -41,3 +41,5 @@ if (move_speed_y > 0) {
 if (x != xprevious) {
 	image_xscale = sign(x - xprevious);	
 }
+
+wheel_y_offset = clamp(yprevious - y, 0, wheel_y_offset_max);

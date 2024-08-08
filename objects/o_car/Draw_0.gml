@@ -1,2 +1,1 @@
-
-draw_self();
+self_draw();

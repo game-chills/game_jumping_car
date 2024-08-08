@@ -55,3 +55,44 @@ function check_collision_block(_x, _y, _bbox_bottom) {
 		has_collision: true,
 	}
 }
+	
+wheel_1_offset_x = 0
+wheel_1_offset_y = 0
+wheel_2_offset_x = 0
+wheel_2_offset_y = 0
+wheel_1_sprite = undefined
+wheel_2_sprite = undefined
+wheel_y_offset = 0;
+wheel_y_offset_max = 32;
+
+function self_draw() {
+	draw_self();
+
+	if (!is_undefined(wheel_1_sprite)) {
+		draw_sprite_ext(
+			wheel_1_sprite,
+			0,
+			x + wheel_1_offset_x * image_xscale,
+			y + wheel_1_offset_y + wheel_y_offset,
+			1,
+			1,
+			0,
+			image_blend,
+			image_alpha,
+		);
+	}
+
+	if (!is_undefined(wheel_2_sprite)) {
+		draw_sprite_ext(
+			wheel_2_sprite,
+			0,
+			x + wheel_2_offset_x * image_xscale,
+			y + wheel_2_offset_y + wheel_y_offset,
+			1,
+			1,
+			0,
+			image_blend,
+			image_alpha,
+		);
+	}	
+}

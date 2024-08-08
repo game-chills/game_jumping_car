@@ -12,7 +12,7 @@ with (car) {
 	y = other.y;
 	image_alpha *= 0.5;
 	
-	draw_self();
+	self_draw();
 	
 	x = _x;
 	y = _y;

@@ -1,17 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"o_car",
+  "%Name":"o_sounder",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"o_car",
+  "name":"o_sounder",
   "overriddenProperties":[],
   "parent":{
-    "name":"o_cars",
-    "path":"folders/o_cars.yy",
+    "name":"o_controllers",
+    "path":"folders/o_controllers.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -31,13 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"s_car_1",
-    "path":"sprites/s_car_1/s_car_1.yy",
-  },
-  "spriteMaskId":{
-    "name":"s_car_mask",
-    "path":"sprites/s_car_mask/s_car_mask.yy",
-  },
+  "spriteId":null,
+  "spriteMaskId":null,
   "visible":true,
 }

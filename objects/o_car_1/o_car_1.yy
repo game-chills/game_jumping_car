@@ -1,19 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"o_car",
+  "%Name":"o_car_1",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"o_car",
+  "name":"o_car_1",
   "overriddenProperties":[],
   "parent":{
-    "name":"o_cars",
-    "path":"folders/o_cars.yy",
+    "name":"car_1",
+    "path":"folders/o_cars/car_1.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"o_car",
+    "path":"objects/o_car/o_car.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
