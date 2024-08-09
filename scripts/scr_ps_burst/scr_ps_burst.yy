@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"s_ps_burst",
+  "%Name":"scr_ps_burst",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"s_ps_burst",
+  "name":"scr_ps_burst",
   "parent":{
     "name":"part_systems",
     "path":"folders/part_systems.yy",

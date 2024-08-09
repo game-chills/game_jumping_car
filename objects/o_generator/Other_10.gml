@@ -178,7 +178,7 @@ if (generator_current.type == GENERATOR_TYPES.LADDER) {
 			_from_y - random(30),
 			_const_for__o_platform__max_x,
 			generator_current.last_position_block.y + random(30),
-			irandom(2),
+			irandom_range(0, 3),
 			_mstype
 		);
 		
@@ -361,6 +361,15 @@ if (generator_current.type == GENERATOR_TYPES.ITERATOR) {
 			_pos_x = _teleport_pos.from + random_range(0, 150) * _teleport_pos.direction;
 			
 			push_block(_pos_x, _pos_y, o_platform_disposable, _mstype, _height);
+			
+			generate_fragile(
+				_const_for__o_platform__min_x,
+				_from_y - random(30),
+				_const_for__o_platform__max_x,
+				generator_current.last_position_block.y + random(30),
+				irandom_range(0, 4),
+				_mstype
+			);
 		}
 		
 		_metadata.stage.type = "move_chaos";
@@ -448,6 +457,15 @@ if (generator_current.type == GENERATOR_TYPES.ITERATOR) {
 			_metadata.stage.length = irandom_range(2, 3);
 			_metadata.stage.time = get_timer()
 		}
+		
+		generate_fragile(
+			_const_for__o_platform__min_x,
+			_from_y - random(30),
+			_const_for__o_platform__max_x,
+			generator_current.last_position_block.y + random(30),
+			irandom_range(0, 4),
+			_mstype
+		);
 	}
 }
 #endregion
@@ -571,6 +589,15 @@ if (generator_current.type == GENERATOR_TYPES.ELEVATOR) {
 	generator_current.last_position_block.x = _inst_move.move_x2;
 	generator_current.last_position_block.y -= _height
 	generator_current.zona.y.lost -= _height
+	
+	generate_fragile(
+		_const_for__o_platform__min_x,
+		_from_y - random(30),
+		_const_for__o_platform__max_x,
+		generator_current.last_position_block.y + random(30),
+		irandom_range(0, 6),
+		_mstype
+	);
 }
 #endregion 
 

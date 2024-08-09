@@ -65,7 +65,7 @@
     {"id":{"name":"ps_drop_platform_disposable","path":"particles/ps_drop_platform_disposable/ps_drop_platform_disposable.yy",},},
     {"id":{"name":"ps_wheel_dust","path":"particles/ps_wheel_dust/ps_wheel_dust.yy",},},
     {"id":{"name":"room_main","path":"rooms/room_main/room_main.yy",},},
-    {"id":{"name":"s_ps_burst","path":"scripts/s_ps_burst/s_ps_burst.yy",},},
+    {"id":{"name":"scr_ps_burst","path":"scripts/scr_ps_burst/scr_ps_burst.yy",},},
     {"id":{"name":"scr_reader_emitter","path":"scripts/scr_reader_emitter/scr_reader_emitter.yy",},},
     {"id":{"name":"scr_sprite_check_collision","path":"scripts/scr_sprite_check_collision/scr_sprite_check_collision.yy",},},
     {"id":{"name":"src_error","path":"scripts/src_error/src_error.yy",},},
