@@ -10,3 +10,4 @@ var _cam_bottom = _cam_y + _cam_h;
 if (bbox_top > _cam_bottom) {
 	instance_destroy();
 }
+ 

@@ -1,20 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"o_car_5",
+  "%Name":"o_car_spawner",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"o_car_5",
+  "name":"o_car_spawner",
   "overriddenProperties":[],
   "parent":{
-    "name":"car_5",
-    "path":"folders/o_cars/car_5.yy",
+    "name":"o_cars",
+    "path":"folders/o_cars.yy",
   },
-  "parentObjectId":{
-    "name":"o_car",
-    "path":"objects/o_car/o_car.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -33,12 +30,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_car_5",
-    "path":"sprites/s_car_5/s_car_5.yy",
+    "name":"s_car_1",
+    "path":"sprites/s_car_1/s_car_1.yy",
   },
-  "spriteMaskId":{
-    "name":"s_car_mask",
-    "path":"sprites/s_car_mask/s_car_mask.yy",
-  },
+  "spriteMaskId":null,
   "visible":true,
 }

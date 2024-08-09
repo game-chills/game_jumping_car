@@ -1,20 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"o_car_2",
+  "%Name":"o_score",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"o_car_2",
+  "name":"o_score",
   "overriddenProperties":[],
   "parent":{
-    "name":"car_2",
-    "path":"folders/o_cars/car_2.yy",
+    "name":"o_controllers",
+    "path":"folders/o_controllers.yy",
   },
-  "parentObjectId":{
-    "name":"o_car",
-    "path":"objects/o_car/o_car.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -32,13 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"s_car_2",
-    "path":"sprites/s_car_2/s_car_2.yy",
-  },
-  "spriteMaskId":{
-    "name":"s_car_mask",
-    "path":"sprites/s_car_mask/s_car_mask.yy",
-  },
+  "spriteId":null,
+  "spriteMaskId":null,
   "visible":true,
 }

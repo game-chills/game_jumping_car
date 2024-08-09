@@ -78,6 +78,7 @@ function calculate_wheel_positions() {
 
 function self_draw() {
 	draw_self();
+	calculate_wheel_positions();
 
 	if (!is_undefined(wheel_1_sprite)) {
 		draw_sprite_ext(

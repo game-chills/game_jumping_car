@@ -1,4 +1,6 @@
 
+randomize();
+
 sounds = [
 	snd_main,
 	snd_main_2,
@@ -9,4 +11,5 @@ sound_current = irandom(array_length(sounds) - 1);
 
 audio_last_play = -1
 
-alarm_set(0, 3);
+alarm_set(0, 5);
+alarm_set(1, 5);
