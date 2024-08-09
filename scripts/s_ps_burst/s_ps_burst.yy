@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_ps_burst",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_ps_burst",
+  "parent":{
+    "name":"part_systems",
+    "path":"folders/part_systems.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

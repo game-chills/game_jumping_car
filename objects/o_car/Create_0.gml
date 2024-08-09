@@ -64,6 +64,17 @@ wheel_1_sprite = undefined
 wheel_2_sprite = undefined
 wheel_y_offset = 0;
 wheel_y_offset_max = 32;
+wheel_1_real_x = 0;
+wheel_1_real_y = 0;
+wheel_2_real_x = 0;
+wheel_2_real_y = 0;
+
+function calculate_wheel_positions() {
+	wheel_1_real_x = x + wheel_1_offset_x * image_xscale;
+	wheel_1_real_y = y + wheel_1_offset_y + wheel_y_offset;
+	wheel_2_real_x = x + wheel_2_offset_x * image_xscale;
+	wheel_2_real_y = y + wheel_2_offset_y + wheel_y_offset;
+}
 
 function self_draw() {
 	draw_self();
@@ -72,8 +83,8 @@ function self_draw() {
 		draw_sprite_ext(
 			wheel_1_sprite,
 			0,
-			x + wheel_1_offset_x * image_xscale,
-			y + wheel_1_offset_y + wheel_y_offset,
+			wheel_1_real_x,
+			wheel_1_real_y,
 			image_xscale,
 			1,
 			0,
@@ -86,8 +97,8 @@ function self_draw() {
 		draw_sprite_ext(
 			wheel_2_sprite,
 			0,
-			x + wheel_2_offset_x * image_xscale,
-			y + wheel_2_offset_y + wheel_y_offset,
+			wheel_2_real_x,
+			wheel_2_real_y,
 			image_xscale,
 			1,
 			0,

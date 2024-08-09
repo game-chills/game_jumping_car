@@ -1,22 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"o_platform_disposable",
+  "%Name":"o_ps_droper",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"o_platform_disposable",
+  "name":"o_ps_droper",
   "overriddenProperties":[],
   "parent":{
-    "name":"o_platforms",
-    "path":"folders/o_platforms.yy",
+    "name":"part_systems",
+    "path":"folders/part_systems.yy",
   },
-  "parentObjectId":{
-    "name":"o_platform",
-    "path":"objects/o_platform/o_platform.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -33,11 +30,8 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":true,
-  "spriteId":{
-    "name":"s_platform_disposable",
-    "path":"sprites/s_platform_disposable/s_platform_disposable.yy",
-  },
+  "solid":false,
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

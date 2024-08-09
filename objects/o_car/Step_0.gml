@@ -35,6 +35,44 @@ if (move_speed_y > 0) {
 					direct_collision_id: _has_collision.first.id
 				});
 		}
+		
+		var _cf = 2;
+		var _has_collision_wheel_1 = sprite_check_collision(
+			wheel_1_sprite,
+			0,
+			wheel_1_real_x,
+			_has_collision.first.bbox_top,
+			_cf,
+			_cf,
+			_has_collision.first
+		);
+		var _has_collision_wheel_2 = sprite_check_collision(
+			wheel_2_sprite,
+			0,
+			wheel_2_real_x,
+			_has_collision.first.bbox_top,
+			_cf,
+			_cf,
+			_has_collision.first
+		);
+		
+		if (_has_collision_wheel_1) {
+			particle_burst(
+				ps_wheel_dust,
+				wheel_1_real_x,
+				_has_collision.first.bbox_top,
+				20
+			);
+		}
+		
+		if (_has_collision_wheel_2) {
+			particle_burst(
+				ps_wheel_dust,
+				wheel_2_real_x,
+				_has_collision.first.bbox_top,
+				20
+			);
+		}
 	}
 }
 
