@@ -27,7 +27,7 @@
   "origin":0,
   "parent":{
     "name":"sprites",
-    "path":"folders/o_controllers/sprites.yy",
+    "path":"folders/Game/o_controllers/sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

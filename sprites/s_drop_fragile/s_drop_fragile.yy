@@ -29,7 +29,7 @@
   "origin":4,
   "parent":{
     "name":"drop_fragile",
-    "path":"folders/part_systems/groups/drop_fragile.yy",
+    "path":"folders/Game/part_systems/groups/drop_fragile.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"sprites",
-    "path":"folders/o_platforms/sprites.yy",
+    "path":"folders/Game/o_platforms/sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

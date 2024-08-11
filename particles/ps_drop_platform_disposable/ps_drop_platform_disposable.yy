@@ -14,7 +14,7 @@
   "name":"ps_drop_platform_disposable",
   "parent":{
     "name":"drop_disposable",
-    "path":"folders/part_systems/groups/drop_disposable.yy",
+    "path":"folders/Game/part_systems/groups/drop_disposable.yy",
   },
   "resourceType":"GMParticleSystem",
   "resourceVersion":"2.0",

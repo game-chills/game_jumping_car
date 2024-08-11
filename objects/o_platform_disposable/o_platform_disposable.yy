@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"o_platforms",
-    "path":"folders/o_platforms.yy",
+    "path":"folders/Game/o_platforms.yy",
   },
   "parentObjectId":{
     "name":"o_platform",

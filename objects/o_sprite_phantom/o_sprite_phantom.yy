@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"module:sprite_check_collision",
-    "path":"folders/module:sprite_check_collision.yy",
+    "path":"folders/Game/module:sprite_check_collision.yy",
   },
   "parentObjectId":null,
   "persistent":false,

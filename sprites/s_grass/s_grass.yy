@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"s_backgrounds",
-    "path":"folders/s_backgrounds.yy",
+    "path":"folders/Game/s_backgrounds.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

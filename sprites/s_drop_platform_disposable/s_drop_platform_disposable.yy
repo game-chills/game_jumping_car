@@ -30,7 +30,7 @@
   "origin":4,
   "parent":{
     "name":"drop_disposable",
-    "path":"folders/part_systems/groups/drop_disposable.yy",
+    "path":"folders/Game/part_systems/groups/drop_disposable.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

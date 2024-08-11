@@ -13,7 +13,7 @@
   "name":"snd_wind",
   "parent":{
     "name":"sounds",
-    "path":"folders/sounds.yy",
+    "path":"folders/Game/sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

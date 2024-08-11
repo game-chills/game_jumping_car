@@ -8,7 +8,7 @@ phantom = instance_create_depth(x, y, -1, o_car_phantom);
 phantom.car = self;
 phantom.init();
 
-function check_collision_block(_x, _y, _bbox_bottom) {
+ function check_collision_block(_x, _y, _bbox_bottom) {
 	var _list = ds_list_create();
 	var _count = instance_place_list(_x, _y, o_platform, _list, false);
 	var _inst, i;
@@ -108,3 +108,6 @@ function self_draw() {
 		);
 	}	
 }
+
+flow_x_left = new StateMachineEvflow();
+flow_x_right = new StateMachineEvflow();

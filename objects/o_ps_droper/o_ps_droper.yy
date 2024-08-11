@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"part_systems",
-    "path":"folders/part_systems.yy",
+    "path":"folders/Game/part_systems.yy",
   },
   "parentObjectId":null,
   "persistent":false,

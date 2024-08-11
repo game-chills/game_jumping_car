@@ -14,7 +14,7 @@
   "name":"ps_wheel_dust",
   "parent":{
     "name":"wheel_dust",
-    "path":"folders/part_systems/groups/wheel_dust.yy",
+    "path":"folders/Game/part_systems/groups/wheel_dust.yy",
   },
   "resourceType":"GMParticleSystem",
   "resourceVersion":"2.0",

@@ -12,6 +12,8 @@ GlobalEventEmitter("window").on("resize", function(_sizes) {
 	}
 	
 	window_set_size(_sizes.w, _sizes.h);
+	surface_resize(application_surface, _w, _h);
+	
 	show_debug_message("Resize window to {0}x{1}", _sizes.w, _sizes.h);
 
 	GlobalEventEmitter("camera").emit("resize", {
@@ -39,8 +41,6 @@ GlobalEventEmitter("camera").on("resize", function(_props) {
 	
 	show_debug_message("Resize camera to {0}x{1}", _w, _h);
 	show_debug_message("Repos camera to {0}x{1}", _x, _y);
-	
-	surface_resize(application_surface, _w, _h);
 	
 	display_set_gui_size(_w, _h);
 });

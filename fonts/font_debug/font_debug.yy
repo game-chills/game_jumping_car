@@ -240,7 +240,7 @@
   "name":"font_debug",
   "parent":{
     "name":"common_fonts",
-    "path":"folders/common_fonts.yy",
+    "path":"folders/Game/common_fonts.yy",
   },
   "pointRounding":0,
   "ranges":[

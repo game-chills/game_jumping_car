@@ -6,7 +6,7 @@
   "name":"scr_ps_burst",
   "parent":{
     "name":"part_systems",
-    "path":"folders/part_systems.yy",
+    "path":"folders/Game/part_systems.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

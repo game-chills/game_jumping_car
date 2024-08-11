@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"car_4",
-    "path":"folders/o_cars/car_4.yy",
+    "path":"folders/Game/o_cars/car_4.yy",
   },
   "parentObjectId":{
     "name":"o_car",

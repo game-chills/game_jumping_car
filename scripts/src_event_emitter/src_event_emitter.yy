@@ -6,7 +6,7 @@
   "name":"src_event_emitter",
   "parent":{
     "name":"common_scripts",
-    "path":"folders/common_scripts.yy",
+    "path":"folders/Game/common_scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -2,7 +2,8 @@
 var _move_speed_y_limit = 40;
 var _move_speed_x_limit = 11;
 
-var _is_pressed_x = keyboard_check(ord("D")) - keyboard_check(ord("A"));
+var _is_pressed_x =
+	flow_x_right.is_active() - flow_x_left.is_active();
 
 if (_is_pressed_x != 0) {
 	move_speed_x = lerp(move_speed_x, _move_speed_x_limit * _is_pressed_x, 0.3);

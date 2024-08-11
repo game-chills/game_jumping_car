@@ -26,7 +26,7 @@
   "origin":7,
   "parent":{
     "name":"o_cars",
-    "path":"folders/o_cars.yy",
+    "path":"folders/Game/o_cars.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
