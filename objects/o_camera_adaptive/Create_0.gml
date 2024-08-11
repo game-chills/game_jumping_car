@@ -11,8 +11,13 @@ GlobalEventEmitter("window").on("resize", function(_sizes) {
 		_h = _sizes.h / _sizes.w * 1080;
 	}
 	
-	window_set_size(_sizes.w, _sizes.h);
-	surface_resize(application_surface, _w, _h);
+	if (os_browser != browser_not_a_browser) {
+		window_set_size(_w, _h);
+		surface_resize(application_surface, _w, _h);
+	} else {
+		window_set_size(_sizes.w, _sizes.h);
+		surface_resize(application_surface, _w, _h);
+	}
 	
 	show_debug_message("Resize window to {0}x{1}", _sizes.w, _sizes.h);
 

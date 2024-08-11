@@ -16,7 +16,7 @@
   "option_html5_icon":"${base_options_dir}/html5/fav.ico",
   "option_html5_index":"use_default",
   "option_html5_interpolate_pixels":false,
-  "option_html5_jsprepend":"\r\ndocument.body.style.overflow = 'hidden';\r\n\r\nvar elements = document.getElementsByClassName('gm4html5_div_class');\r\nfor (var i = 0; i < elements.length; i++) {\r\n  elements[i].style.overflow = 'hidden';\r\n  elements[i].addEventListener('touchstart', e => {\r\n    e.preventDefault();\r\n  }, {passive: false})\r\n}\r\n\r\n",
+  "option_html5_jsprepend":"\r\ndocument.body.style.overflow = 'hidden';\r\n\r\nvar elements = document.getElementsByClassName('gm4html5_div_class');\r\nfor (var i = 0; i < elements.length; i++) {\r\n  elements[i].style.overflow = 'hidden';\r\n  elements[i].addEventListener('touchstart', e => {\r\n    e.preventDefault();\r\n  }, {passive: false})\r\n}\r\n\r\nsetInterval(() => {\r\n  const canvas = document.getElementById('canvas');\r\n  if (canvas) {\r\n    if (canvas.style.width !== '100%' || canvas.style.height !== '100%') {\r\n      canvas.style.width = '100%';\r\n      canvas.style.height = '100%';\r\n      canvas.style.overflow = 'hidden';\r\n    }\r\n  }\r\n}, 1000);\r\n",
   "option_html5_loadingbar":"use_default",
   "option_html5_localrunalert":true,
   "option_html5_outputdebugtoconsole":true,

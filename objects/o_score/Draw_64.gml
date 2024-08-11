@@ -25,3 +25,5 @@ draw_text(32, 250, string("r-window: {0}, {1}",
 	window_get_width(),
 	window_get_height()
 ));
+
+draw_text(32, 280, "version: 0.32");
