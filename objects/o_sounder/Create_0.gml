@@ -7,9 +7,41 @@ sounds = [
 	snd_main_3,
 	snd_main_4,
 ];
-sound_current = irandom(array_length(sounds) - 1);
+sound_music_current = 0;
 
-audio_last_play = -1
+audio_id_music = -1;
+audio_id_wind = -1;
 
-alarm_set(0, 5);
-alarm_set(1, 5);
+function start_play_music() {
+	if (audio_exists(audio_id_music)) {
+		return;
+	}
+	
+	sound_music_current = irandom(array_length(sounds) - 1);
+	audio_id_music = audio_play_sound(
+		sounds[sound_music_current],
+		0,
+		false
+	);
+}
+
+function start_play_wind() {
+	if (audio_exists(audio_id_wind)) {
+		return;
+	}
+	
+	audio_id_wind = audio_play_sound(
+		snd_wind,
+		0,
+		true
+	);
+}
+
+function stop_audios() {
+	if (audio_exists(audio_id_music)) {
+		audio_stop_sound(audio_id_music);
+	}
+	if (audio_exists(audio_id_wind)) {
+		audio_stop_sound(audio_id_wind);
+	}
+}
