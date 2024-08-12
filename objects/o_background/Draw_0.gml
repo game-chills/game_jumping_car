@@ -1,4 +1,6 @@
 
+#region draw background ground
+
 var _back_sprite = s_background
 var _back_sprite_width = sprite_get_width(_back_sprite)
 var _back_sprite_height = sprite_get_height(_back_sprite)
@@ -27,3 +29,5 @@ for (var i = 0; i < _wcount; ++i) {
 		draw_sprite(_back_sprite, 0, rx, yy);
 	}
 }
+
+#endregion

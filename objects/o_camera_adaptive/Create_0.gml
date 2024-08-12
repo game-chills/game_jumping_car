@@ -73,7 +73,7 @@ GlobalEventEmitter("camera").on("move_up_y", function(_camera_up_y) {
 	var _camera_x = camera_get_view_x(_camera);
 	var _camera_y = camera_get_view_y(_camera);
 	
-	var _cam_max_y = min(_camera_y, _camera_up_y);
+	var _cam_max_y = min(_camera_y, _camera_up_y, current_camera_yup);
 	current_camera_yup = _cam_max_y;
 })
 

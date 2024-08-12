@@ -8,7 +8,6 @@ var _incline = cos(pi + _time_rad) * _max_incline;
 
 camera_set_view_angle(view_camera[0], _incline);
 
-
 var _camera = view_camera[0];
 var _camera_x = camera_get_view_x(_camera);
 var _camera_y = camera_get_view_y(_camera);
