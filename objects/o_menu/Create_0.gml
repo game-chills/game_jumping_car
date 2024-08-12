@@ -7,6 +7,7 @@ language = "en";
 
 ui = {
 	open: true,
+	alpha: 1,
 	button_play: undefined,
 	button_sound_off: undefined,
 }

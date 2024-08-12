@@ -25,6 +25,8 @@ for (var i = 0; i < _wcount; ++i) {
 			= (_cam_y + j * _back_sprite_height) 
 			+ (abs(_cam_y) % _back_sprite_height);
 		
+		draw_set_color(c_white);
+		draw_set_alpha(1);
 		draw_sprite(_back_sprite, 0, lx, yy);
 		draw_sprite(_back_sprite, 0, rx, yy);
 	}

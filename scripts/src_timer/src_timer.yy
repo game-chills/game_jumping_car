@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"src_timer",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"src_timer",
+  "parent":{
+    "name":"Game",
+    "path":"folders/Game.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

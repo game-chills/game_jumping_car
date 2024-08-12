@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_translates",
+  "%Name":"src_html_mouse_check",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_translates",
+  "name":"src_html_mouse_check",
   "parent":{
     "name":"Game",
     "path":"folders/Game.yy",
