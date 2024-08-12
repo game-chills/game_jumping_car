@@ -117,9 +117,7 @@ timer_set_timeout_sync(function() {
 	var _language = get_language();
 	show_debug_message({ language: _language });
 	
-	GlobalEventEmitter("language").on("change", function() {
-		return _language.language;
-	});
+	GlobalEventEmitter("language").emit("change", _language.language);
 });
 
 
