@@ -1,17 +1,24 @@
 
+/* io randomize */
 randomize();
 
+/* constants */
 sounds = [
 	snd_main,
 	snd_main_2,
 	snd_main_3,
 	snd_main_4,
 ];
+
+/* state */
 sound_music_current = 0;
 
 audio_id_music = -1;
 audio_id_wind = -1;
 
+switcher_audio_active = false;
+
+/* methods */
 function start_play_music() {
 	if (audio_exists(audio_id_music)) {
 		return;
@@ -45,3 +52,9 @@ function stop_audios() {
 		audio_stop_sound(audio_id_wind);
 	}
 }
+
+/* listeners */
+
+GlobalEventEmitter("sound").on("switch:active", function(_active) {
+	switcher_audio_active = bool(_active);
+});

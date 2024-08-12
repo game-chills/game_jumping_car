@@ -1,7 +1,5 @@
 
 var _random_car = choose(
-	o_car_1,
-	o_car_3,
 	o_car_4,
 )
 

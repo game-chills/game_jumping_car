@@ -1,15 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"o_car_spawner",
+  "%Name":"o_timers",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"o_car_spawner",
+  "name":"o_timers",
   "overriddenProperties":[],
   "parent":{
-    "name":"o_cars",
-    "path":"folders/Game/o_cars.yy",
+    "name":"module:timers",
+    "path":"folders/Game/module:timers.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -29,10 +29,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"s_car_4",
-    "path":"sprites/s_car_4/s_car_4.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

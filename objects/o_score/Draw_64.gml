@@ -3,6 +3,7 @@ draw_set_color(c_black);
 draw_set_alpha(0.7)
 draw_rectangle(0, 0, 400, 400,false)
 draw_set_alpha(1)
+draw_set_halign(fa_left)
 
 draw_set_color(c_yellow);
 draw_set_font(font_debug)
@@ -26,4 +27,4 @@ draw_text(32, 250, string("r-window: {0}, {1}",
 	window_get_height()
 ));
 
-draw_text(32, 280, "version: 0.32");
+draw_text(32, 280, "version: 0.34");

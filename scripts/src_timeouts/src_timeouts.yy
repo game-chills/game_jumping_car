@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"src_timeouts",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"src_timeouts",
+  "parent":{
+    "name":"module:timers",
+    "path":"folders/Game/module:timers.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

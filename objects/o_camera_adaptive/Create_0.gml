@@ -36,7 +36,7 @@ GlobalEventEmitter("camera").on("resize", function(_props) {
 	view_hport[_camera] = _h;
 	
 	var _x = -(_w - 1080) / 2;
-	var _y = -(_h - 1920);
+	var _y = camera_get_view_y(_camera);
 	
 	current_camera_w = _w;
 	current_camera_h = _h;
@@ -74,8 +74,7 @@ GlobalEventEmitter("camera").on("move_up_y", function(_camera_up_y) {
 	var _camera_y = camera_get_view_y(_camera);
 	
 	var _cam_max_y = min(_camera_y, _camera_up_y);
-	
-	camera_set_view_pos(_camera, _camera_x, _cam_max_y);
+	current_camera_yup = _cam_max_y;
 })
 
 /* methods */
@@ -102,6 +101,7 @@ current_window_w = 0
 current_window_h = 0
 current_camera_w = 0
 current_camera_h = 0
+current_camera_yup = 0;
 
 /* init */
 

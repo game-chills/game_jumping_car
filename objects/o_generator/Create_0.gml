@@ -53,11 +53,17 @@ generator_previous = {
 }
 
 /* state flags */
-object_ready = false;
+object_ready = true;
 active_generator = false;
 active_generations = false;
 
 /* methods */
+function init_generator(_first_block) {
+	object_ready = true;
+	generator_current.last_position_block.x = _first_block.x;
+	generator_current.last_position_block.y = _first_block.y;
+}
+
 function push_generator(_type, _is_first_block=false) {
 	if (!object_ready) {
 		throw new Error("[o_generator] is not ready");
@@ -127,10 +133,6 @@ function push_generator(_type, _is_first_block=false) {
 	}
 }
 
-/* init */
-alarm_set(0, 1);
-alarm_set(1, 5);
-
 /* subscribers */
 
 events.on("generation_ended", function() {
@@ -145,4 +147,42 @@ events.on("generation_ended", function() {
 	}
 	
 	event_user(1);
+});
+
+GlobalEventEmitter("game").on("play", function() {
+	var _cam_h = GlobalReaderEmitter("camera").request("h");
+	var _cam_y = GlobalReaderEmitter("camera").request("y");
+	var _start_y = _cam_y - _cam_h * 0.75;
+	
+	with o_platform {
+		if (bbox_bottom + 48 < _cam_y) {
+			instance_destroy(id, false);
+		}
+	}
+	with (o_car) {
+		instance_destroy();
+	}
+	
+	var _first_block = instance_create_depth(
+		room_width / 2,
+		_start_y,
+		0,
+		o_platform_first,
+	)
+	var _car = instance_create_depth(
+		_first_block.x,
+		_first_block.y - 256,
+		0,
+		o_car_spawner,
+	)
+	
+	init_generator(_first_block);
+	
+	active_generator = true;
+	
+	push_generator(GENERATOR_TYPES.LADDER, true);
+});
+
+GlobalEventEmitter("game").on("dead", function() {
+	active_generator = false;	
 });
