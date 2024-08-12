@@ -2,6 +2,8 @@
 draw_clear_ext(#86defc, 1);
 
 #region clouds
+draw_clouds_to_surface();
+
 var _surface = get_surface_for_clouds();
 var _cam_y = GlobalReaderEmitter("camera").request("y", 0);
 var _alpha = 0.6;

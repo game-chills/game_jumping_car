@@ -7,8 +7,8 @@ surface_clouds = undefined;
 function get_surface_for_clouds() {
 	var _cam_h = GlobalReaderEmitter("camera").request("h", room_height);
 	
-	var _w = _cam_h + 400;
-	var _h = room_width / 2;
+	var _w = floor(_cam_h + 400);
+	var _h = floor(room_width / 2);
 	
 	var _surface_is_exists =
 		!is_undefined(surface_clouds) &&
