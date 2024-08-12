@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_html_mouse_check",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_html_mouse_check",
+  "parent":{
+    "name":"Game",
+    "path":"folders/Game.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

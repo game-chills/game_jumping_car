@@ -34,10 +34,9 @@ ui.button_sound_off = {
 }
 
 if (mouse_check_button_pressed(mb_left)) {
-	var _mx = 
-		window_mouse_get_x() / window_get_width() * display_get_gui_width();
-	var _my = 
-		window_mouse_get_y() / window_get_height() * display_get_gui_height();
+	var _mouse = e_html_touches_mouse_page_position();
+	var _mx = _mouse.x;
+	var _my = _mouse.y;
 	
 	var _buttons = [
 		ui.button_play,

@@ -40,4 +40,3 @@ if (!is_undefined(ui.button_sound_off)) {
 	
 	draw_text(_button.x, _button.y, _button.text);
 }
-

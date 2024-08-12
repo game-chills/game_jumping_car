@@ -19,10 +19,11 @@
     {"$GMExtensionFile":"","%Name":"","constants":[],"copyToTargets":-1,"filename":"e_html_touches.js","final":"","functions":[
         {"$GMExtensionFunction":"","%Name":"e_html_touches_init","argCount":0,"args":[],"documentation":"","externalName":"eHtmlTouchesInit","help":"","hidden":true,"kind":5,"name":"e_html_touches_init","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
         {"$GMExtensionFunction":"","%Name":"e_html_touches_get","argCount":0,"args":[],"documentation":"","externalName":"eHtmlTouchesGet","help":"","hidden":false,"kind":5,"name":"e_html_touches_get","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
-      ],"init":"eHtmlTouchesInit","kind":5,"name":"","order":[],"origname":"","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
+        {"$GMExtensionFunction":"","%Name":"e_html_touches_get_mouse","argCount":0,"args":[],"documentation":"","externalName":"eHtmlTouchesGetMouse","help":"","hidden":false,"kind":5,"name":"e_html_touches_get_mouse","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
+      ],"init":"e_html_touches_init","kind":5,"name":"","order":[],"origname":"","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
   ],
   "gradleinject":"",
-  "hasConvertedCodeInjection":false,
+  "hasConvertedCodeInjection":true,
   "helpfile":"",
   "HTML5CodeInjection":"",
   "html5Props":false,

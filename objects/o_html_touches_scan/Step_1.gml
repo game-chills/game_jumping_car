@@ -8,3 +8,5 @@ var _page_state_json = json_parse(_page_state)
 
 crect = _page_state_json.crect;
 ctouches = _page_state_json.ctouches;
+
+e_html_touches_mouse_page_position();

@@ -2,6 +2,13 @@ const memoryEHtmlTouches = {
   touches: [],
 };
 
+const memoryEHtmlMouse = {
+  x: 0,
+  y: 0,
+  xc: 0,
+  yc: 0,
+}
+
 function eHtmlTouchesInit() {
   const element = document.querySelector('.gm4html5_div_class');
 
@@ -67,6 +74,19 @@ function eHtmlTouchesInit() {
       });
     }
   });
+
+  element.addEventListener('mousemove', (event) => {
+    const rect = element.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    const xc = x / rect.width;
+    const yc = y / rect.height;
+
+    memoryEHtmlMouse.x = x;
+    memoryEHtmlMouse.y = y;
+    memoryEHtmlMouse.xc = xc;
+    memoryEHtmlMouse.yc = yc;
+  });
 }
 
 function eHtmlTouchesGet() {
@@ -77,6 +97,14 @@ function eHtmlTouchesGet() {
     crect: rect,
     ctouches: memoryEHtmlTouches.touches,
   };
+
+  return JSON.stringify(json);
+}
+
+function eHtmlTouchesGetMouse() {
+  const json = {
+    mouse: memoryEHtmlMouse,
+  }
 
   return JSON.stringify(json);
 }
