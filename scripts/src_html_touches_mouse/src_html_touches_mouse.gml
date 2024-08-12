@@ -48,11 +48,11 @@ function e_html_touches_mouse_page_position() {
 			var _t_ex = _first.pageX;
 			var _t_ey = _first.pageY;
 		
-			_last_position.x = _t_ex;
-			_last_position.y = _t_ey;
-		
-			_last_position.xcf = _t_ex / _last_position.w;
-			_last_position.ycf = _t_ey / _last_position.h;
+			_last_position.xcf = _t_ex / _crect.width;
+			_last_position.ycf = _t_ey / _crect.height;
+			
+			_last_position.x = _last_position.xcf * _last_position.w;
+			_last_position.y = _last_position.ycf * _last_position.h;
 		}
 	} else {
 		var _page_mouse_state = e_html_touches_get_mouse();
