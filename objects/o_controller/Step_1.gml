@@ -8,6 +8,10 @@ if (os_browser == browser_not_a_browser) {
 		audio_stop_all();
 		room_restart();
 	}
+	
+	if (!instance_exists(o_car)) {
+		return;
+	}
 
 	if (mouse_check_button_pressed(mb_right)) {
 		o_car.x = mouse_x;

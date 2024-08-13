@@ -42,3 +42,15 @@ GlobalEventEmitter("ev:move_chaos").on("collision", function(_props) {
 	move_x = move_x1 + _vector.x;
 	move_y = move_y1 + _vector.y;
 })
+
+line_painter = instance_create_depth(
+	0, 
+	0, 
+	depth + 1,
+	o_line_painter
+);
+line_painter.creator = id;
+
+line_painter.image_alpha = 0.8;
+line_painter.image_blend = #ffa3cd;
+line_painter.line_dir = -1;

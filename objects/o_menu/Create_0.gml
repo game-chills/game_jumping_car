@@ -109,6 +109,10 @@ GlobalEventEmitter("game").on("dead", function() {
 	ui.open = true;
 });
 
+GlobalReaderEmitter("sound").provider("active", function() {
+	return sound_active
+});
+
 /* timeouts */
 
 timer_set_timeout_sync(function() {

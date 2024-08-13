@@ -1,16 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"o_ads",
+  "%Name":"o_line_painter",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"o_ads",
+  "name":"o_line_painter",
   "overriddenProperties":[],
   "parent":{
-    "name":"o_controllers",
-    "path":"folders/Game/o_controllers.yy",
+    "name":"o_platforms",
+    "path":"folders/Game/o_platforms.yy",
   },
   "parentObjectId":null,
   "persistent":false,

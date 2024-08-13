@@ -25,6 +25,7 @@ y += move_speed_y;
 
 if (move_speed_y > 0) {
 	var _has_collision = check_collision_block(x, y, bbox_bottom);
+	var _is_active_sound = GlobalReaderEmitter("sound").request("active", false);
 	
 	if (_has_collision.has_collision) {
 		move_speed_y = -28;
@@ -35,6 +36,10 @@ if (move_speed_y > 0) {
 					selector: _has_collision.first.selector,
 					direct_collision_id: _has_collision.first.id
 				});
+			
+			if (_is_active_sound) {
+				audio_play_sound(snd_shift, 0, false);
+			}
 		}
 		
 		var _cf = 2;
@@ -73,6 +78,10 @@ if (move_speed_y > 0) {
 				_has_collision.first.bbox_top,
 				20
 			);
+		}
+		
+		if (_is_active_sound) {
+			audio_play_sound(snd_jump, 0, false);
 		}
 	}
 }

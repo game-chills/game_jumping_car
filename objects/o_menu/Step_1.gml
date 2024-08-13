@@ -33,6 +33,10 @@ ui.button_sound_off = {
 	type: "sound_off",
 }
 
+if (keyboard_check_pressed(vk_space)) {
+	GlobalEventEmitter("menu").emit("click", "play");
+}
+
 if (mouse_check_button_pressed(mb_left)) {
 	var _mouse = e_html_touches_mouse_page_position();
 	var _mx = _mouse.x;
