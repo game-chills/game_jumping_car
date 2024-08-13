@@ -23,7 +23,7 @@ for (var i = 0; i < _wcount; ++i) {
 	for (var j = -2; j < _hcount; ++j) {
 		yy 
 			= (_cam_y + j * _back_sprite_height) 
-			+ (abs(_cam_y) % _back_sprite_height);
+			+ (abs(_cam_y * 1.1) % _back_sprite_height);
 		
 		draw_set_color(c_white);
 		draw_set_alpha(1);
