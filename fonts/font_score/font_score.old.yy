@@ -1,6 +1,6 @@
 {
   "$GMFont":"",
-  "%Name":"font_menu",
+  "%Name":"font_score",
   "AntiAlias":1,
   "applyKerning":0,
   "ascender":44,
@@ -189,7 +189,7 @@
   "last":0,
   "lineHeight":56,
   "maintainGms1Font":false,
-  "name":"font_menu",
+  "name":"font_score",
   "parent":{
     "name":"common_fonts",
     "path":"folders/Game/common_fonts.yy",

@@ -2,7 +2,7 @@
 ads_ready_timeout = false;
 ads_ready_dead = 2;
 
-ads_minutes = 2;
+ads_minutes = 1.5;
 
 alarm_set(0, room_speed * 60 * ads_minutes);
 

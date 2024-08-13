@@ -2,14 +2,19 @@
 /* state */
 
 sound_active = false;
+hint_already_visible = false;
 
 language = "en";
 
 ui = {
 	open: true,
+	active: true,
+	menu_type: "main",
 	alpha: 1,
+	transition: undefined,
 	button_play: undefined,
 	button_sound_off: undefined,
+	button_hint_okey: undefined,
 }
 
 /* methods */
@@ -18,6 +23,7 @@ function load_params() {
 	ini_open("params")
 	{
 		sound_active = ini_read_real("settings", "sound_active", 1);
+		hint_already_visible = ini_read_real("state", "hint_already_visible", 1);
 	}
 	ini_close()
 }
@@ -26,12 +32,14 @@ function save_params() {
 	ini_open("params")
 	{
 		ini_write_real("settings", "sound_active", sound_active);
+		ini_write_real("state", "hint_already_visible", hint_already_visible);
 	}
 	ini_close()
 }
 
 function notify_change_params() {
 	GlobalEventEmitter("sound").emit("switch:active", sound_active);
+	GlobalEventEmitter("menu").emit("goto:apply:hint", hint_already_visible);
 }
 
 function get_language() {
@@ -74,12 +82,6 @@ function get_language() {
 
 /* listeners */
 
-GlobalEventEmitter("params").on("sound:switch:active", function(_active) {
-	sound_active = _active;
-	
-	notify_change_params();
-})
-
 GlobalEventEmitter("language").on("change", function(_language) {
 	language = _language;
 });
@@ -97,16 +99,43 @@ GlobalEventEmitter("menu").on("click", function(_type) {
 		save_params();
 		
 		notify_change_params();
+		
+		return;
 	}
 	
 	if (_type == "play") {
 		ui.open = false;
+		
 		GlobalEventEmitter("game").emit("play");
+		
+		return;
+	}
+	
+	if (_type == "hint_okey") {
+		
+		ui.transition = {
+			menu_type: "main",
+			moment: "out",
+		}
+		
+		var _disable_first_hint = false;
+		if (_disable_first_hint) {
+			hint_already_visible = false;
+			save_params();
+		}
+		
+		return;
 	}
 });
 
 GlobalEventEmitter("game").on("dead", function() {
 	ui.open = true;
+});
+
+GlobalEventEmitter("menu").on("goto:apply:hint", function(_is_need_hint) {
+	if (_is_need_hint) {
+		ui.menu_type = "hint";
+	}
 });
 
 GlobalReaderEmitter("sound").provider("active", function() {
@@ -117,6 +146,7 @@ GlobalReaderEmitter("sound").provider("active", function() {
 
 timer_set_timeout_sync(function() {
 	load_params();
+	
 	notify_change_params();
 	
 	var _language = get_language();
