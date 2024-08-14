@@ -7,6 +7,7 @@ GENERATOR_TYPES = {
 	LADDER: "LADDER",
 	ITERATOR: "ITERATOR",
 	ELEVATOR: "ELEVATOR",
+	INDEFINITE: "INDEFINITE",
 }
 
 GENERATOR_METAPROPS = {
@@ -26,6 +27,12 @@ GENERATOR_METAPROPS = {
 		zona_range: {
 			min: room_height * 1.2,
 			max: room_height * 2.2,
+		}
+	},
+	INDEFINITE: {
+		zona_range: {
+			min: room_height * 0.7,
+			max: room_height * 1.5,
 		}
 	}
 }
@@ -127,6 +134,13 @@ function push_generator(_type, _is_first_block=false) {
 			_metadata.previous_sign = 1
 			return;
 		} 
+		case GENERATOR_TYPES.INDEFINITE: {
+			generator_current.zona.y.lost = irandom_range(
+				GENERATOR_METAPROPS.INDEFINITE.zona_range.min,
+				GENERATOR_METAPROPS.INDEFINITE.zona_range.max
+			);
+			return;
+		}
 		
 		default: 
 			return push_generator(GENERATOR_TYPES.LADDER, _is_first_block);

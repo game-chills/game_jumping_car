@@ -9,14 +9,22 @@ move_y2 = y;
 move_max_speed = random_range(4, 7)
 move_lim_speed = random_range(32, 96)
 
-line_painter = instance_create_depth(
-	0, 
-	0, 
-	depth + 1,
-	o_line_painter
-);
-line_painter.creator = id;
 
-line_painter.image_alpha = 0.8;
-line_painter.image_blend = #fffda4;
-line_painter.line_dir = -1;
+var _score = GlobalReaderEmitter("score").request("amount");
+
+if (_score > 450) {
+	line_painter_active = false;
+} else {
+	line_painter_active = true;
+	line_painter = instance_create_depth(
+		0, 
+		0, 
+		depth + 1,
+		o_line_painter
+	);
+	line_painter.creator = id;
+
+	line_painter.image_alpha = 0.8;
+	line_painter.image_blend = #fffda4;
+	line_painter.line_dir = -1;
+}

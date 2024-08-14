@@ -601,6 +601,47 @@ if (generator_current.type == GENERATOR_TYPES.ELEVATOR) {
 }
 #endregion 
 
-
+#region GENERATOR_TYPES.INDEFINITE
+if (generator_current.type == GENERATOR_TYPES.INDEFINITE) {
+	var _mstype = "indefinite";
+	var _metadata = generator_current.metadata;
+	var _from_x = generator_current.last_position_block.x
+	var _from_y = generator_current.last_position_block.y
+	
+	/* constants */
+	
+	var _const_up_height_min = 250;
+	var _const_up_height_max = 360;
+	
+	var _height = random_range(
+		_const_up_height_min * 0.7,
+		_const_up_height_max * 0.7
+	);
+	
+	var _teleport_pos =
+		generator_current.last_position_block.x > _const_center_x
+		? {
+			from: _const_for__o_platform__min_x,
+			to: _const_for__o_platform__max_x,
+			direction: 1
+		}
+		: {
+			from: _const_for__o_platform__max_x,
+			to: _const_for__o_platform__min_x,
+			direction: -1
+		}
+	
+	var _pos_x = _teleport_pos.from + random_range(0, 150) * _teleport_pos.direction
+	var _pos_y = generator_current.last_position_block.y - _height;
+		
+	var _move_chaos = push_block(
+		_pos_x, 
+		_pos_y, 
+		o_platform_indefinite,
+		_mstype,
+		_height
+	); 
+}
+#endregion
 
 

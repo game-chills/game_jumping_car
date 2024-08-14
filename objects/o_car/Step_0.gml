@@ -42,6 +42,15 @@ if (move_speed_y > 0) {
 			}
 		}
 		
+		if (_has_collision.first.object_index == o_platform_indefinite) {
+			GlobalEventEmitter("ev:indefinite")
+				.emit("collision", _has_collision.first.id);
+			
+			if (_is_active_sound) {
+				audio_play_sound(snd_shift, 0, false);
+			}	
+		}
+		
 		var _cf = 2;
 		var _has_collision_wheel_1 = sprite_check_collision(
 			wheel_1_sprite,

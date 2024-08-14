@@ -43,14 +43,23 @@ GlobalEventEmitter("ev:move_chaos").on("collision", function(_props) {
 	move_y = move_y1 + _vector.y;
 })
 
-line_painter = instance_create_depth(
-	0, 
-	0, 
-	depth + 1,
-	o_line_painter
-);
-line_painter.creator = id;
+var _score = GlobalReaderEmitter("score").request("amount");
 
-line_painter.image_alpha = 0.8;
-line_painter.image_blend = #ffa3cd;
-line_painter.line_dir = -1;
+if (_score > 640) {
+	line_painter_active = false;
+} else {
+
+	line_painter_active = true;
+	line_painter = instance_create_depth(
+		0, 
+		0, 
+		depth + 1,
+		o_line_painter
+	);
+	line_painter.creator = id;
+
+	line_painter.image_alpha = 0.8;
+	line_painter.image_blend = #ffa3cd;
+	line_painter.line_dir = -1;
+
+}
