@@ -8,7 +8,7 @@ language = "en";
 
 ui = {
 	open: true,
-	active: true,
+	active: false,
 	menu_type: "main",
 	alpha: 1,
 	transition: undefined,
@@ -16,6 +16,15 @@ ui = {
 	button_sound_off: undefined,
 	button_hint_okey: undefined,
 }
+
+ads_mode = {
+	available: false,
+	active: false,
+	time_max: room_speed * 3,
+	time_curr: 0,
+}
+
+async_get_language = undefined;
 
 /* methods */
 
@@ -42,7 +51,11 @@ function notify_change_params() {
 	GlobalEventEmitter("menu").emit("goto:apply:hint", hint_already_visible);
 }
 
-function get_language() {
+function danger_request_get_language(_callback) {
+	if (!is_undefined(async_get_language)) {
+		return;
+	}
+	
 	var _available = ["ru", "en", "tr"];
 	var _os_language = string_lower(os_get_language());
 	
@@ -54,6 +67,12 @@ function get_language() {
 		_final_provider = "os";
 	}
 	
+	async_get_language = {
+		language: _final_language,
+		provider: _final_provider,
+		callback: _callback,
+	}
+	
 	if (os_browser != browser_not_a_browser) {
 		
 		/* applied language from browser */
@@ -63,21 +82,23 @@ function get_language() {
 			_final_provider = "browser";
 		}
 		
+		async_get_language = {
+			language: _final_language,
+			provider: _final_provider,
+			callback: _callback,
+		}
+		
 		/* applied language from yandex language */
-		try {
-			var _yandex_params = json_parse(YaGames_getEnvironment());
-			var _yandex_language = string_lower(_yandex_params.data.lang);
-			if (array_contains(_available, _yandex_language)) {
-				_final_language = _yandex_game_lang;
-				_final_provider = "yandex";
-			}
-		} catch (e) {};
+		var _yandex_request_id = YaGames_getEnvironment();
+		async_get_language.req_id = _yandex_request_id;
+		
+		return;
 	}
 	
-	return {
-		provider: _final_provider,
+	_callback({
 		language: _final_language,
-	}
+		provider: _final_provider,
+	})
 }
 
 /* listeners */
@@ -104,9 +125,13 @@ GlobalEventEmitter("menu").on("click", function(_type) {
 	}
 	
 	if (_type == "play") {
-		ui.open = false;
 		
-		GlobalEventEmitter("game").emit("play");
+		if (ads_mode.available) {
+			ads_mode.active = true;
+			ads_mode.time_curr = ads_mode.time_max;
+		} else {
+			GlobalEventEmitter("menu").emit("click:play");
+		}
 		
 		return;
 	}
@@ -128,6 +153,16 @@ GlobalEventEmitter("menu").on("click", function(_type) {
 	}
 });
 
+GlobalEventEmitter("ads").on("show:available", function() {
+	ads_mode.available = true;
+});
+
+GlobalEventEmitter("menu").on("click:play", function() {
+	ui.open = false;
+		
+	GlobalEventEmitter("game").emit("play");
+});
+
 GlobalEventEmitter("game").on("dead", function() {
 	ui.open = true;
 });
@@ -139,20 +174,27 @@ GlobalEventEmitter("menu").on("goto:apply:hint", function(_is_need_hint) {
 });
 
 GlobalReaderEmitter("sound").provider("active", function() {
-	return sound_active
+	return sound_active && window_has_focus();
+});
+
+GlobalEventEmitter("start").on("yes", function() {
+	ui.active = true;
 });
 
 /* timeouts */
 
-timer_set_timeout_sync(function() {
+timer_set_timeout_async(function() {
 	load_params();
 	
 	notify_change_params();
 	
-	var _language = get_language();
-	show_debug_message({ language: _language });
+	danger_request_get_language(function(_language) {
+		show_debug_message({ language: _language });
+		
+		GlobalEventEmitter("language").emit("change", _language.language);
+		GlobalEventEmitter("start").emit("yes");
+	});
 	
-	GlobalEventEmitter("language").emit("change", _language.language);
-});
+}, 2000);
 
 

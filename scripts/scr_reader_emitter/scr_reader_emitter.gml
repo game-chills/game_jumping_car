@@ -7,10 +7,6 @@ function ReaderEmitter() constructor {
 	#endregion
 	
 	function provider(_event_name, _callback) {
-		if (variable_struct_exists(self.__events, _event_name)) {
-			throw new Error("[scr_reader_emitter] emit-provider already set");	
-		}
-		
 		struct_set(self.__events, _event_name, _callback);
 		
 		return self;

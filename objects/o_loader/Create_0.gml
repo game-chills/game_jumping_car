@@ -1,1 +1,8 @@
-alarm_set(0, room_speed * 0.5);
+
+GlobalEventEmitter("start").on("yes", function() {
+	
+	alarm_set(0, 10);
+	
+	room_goto_next();
+	
+});

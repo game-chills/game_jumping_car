@@ -7,6 +7,24 @@ if (!is_undefined(ui.transition)) {
 	ui.active = false;
 }
 
+if (ads_mode.active) {
+	
+	{
+		--ads_mode.time_curr;
+		if (ads_mode.time_curr < 0) {
+			ads_mode.available = false;
+			ads_mode.active = false;
+			
+			ui.alpha = 0;
+			
+			GlobalEventEmitter("ads").emit("show");
+			GlobalEventEmitter("menu").emit("click:play");
+		}
+	}
+	
+	return;	
+}
+
 var _cam_w = GlobalReaderEmitter("camera").request("w", 0);
 var _cam_h = GlobalReaderEmitter("camera").request("h", 0);
 var _button_sprite = s_button;

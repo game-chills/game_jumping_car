@@ -1,4 +1,34 @@
 
+if (ads_mode.active) {
+	
+	{
+		draw_set_alpha(1);
+		draw_set_font(font_menu_hint);
+		draw_set_valign(fa_center);
+		draw_set_halign(fa_middle);
+		
+		var _cam_w = GlobalReaderEmitter("camera").request("w", 0);
+		var _cam_h = GlobalReaderEmitter("camera").request("h", 0);
+		var _lost_sec = ceil(ads_mode.time_curr / room_speed);
+		
+		draw_set_color(c_black);
+		draw_text(
+			_cam_w / 2 - 4,
+			_cam_h / 2 - 4,
+			t(language, "ads") + string(_lost_sec),
+		);
+		
+		draw_set_color(c_yellow);
+		draw_text(
+			_cam_w / 2,
+			_cam_h / 2,
+			t(language, "ads") + string(_lost_sec),
+		);
+	}
+	
+	return;	
+} 
+
 if (ui.alpha < 0.01) {
 	return;
 }
@@ -79,7 +109,7 @@ if (ui.menu_type == "main") {
 	}
 	
 	return;
-}
+} 
 
 if (ui.menu_type == "hint") {
 	
