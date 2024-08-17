@@ -1,4 +1,8 @@
 
+//if (!GlobalReaderEmitter("sound").request("resume", false)) {
+//	return;
+//}
+
 var _move_speed_y_limit = 40;
 var _move_speed_x_limit = 11;
 

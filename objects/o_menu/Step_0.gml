@@ -11,12 +11,18 @@ if (os_browser == browser_not_a_browser) {
 		sound_ads_active = false;
 	}
 } else {
-	var _page_state = e_html_touches_get();
-	var _page_state_json = json_parse(_page_state)
+	if (is_mobile()) {
+		var _page_state = e_html_touches_get();
+		var _page_state_json = json_parse(_page_state)
 
-	ctouches = _page_state_json.ctouches;
+		var _ctouches = _page_state_json.ctouches;
 
-	if (array_length(ctouches) > 0) {
-		sound_ads_active = false;
+		if (array_length(_ctouches) > 0) {
+			sound_ads_active = false;
+		}	
+	} else {
+		if (mouse_check_button(mb_left) || keyboard_check(vk_anykey)) {
+			sound_ads_active = false;
+		}
 	}
 }
