@@ -58,7 +58,3 @@ function stop_audios() {
 GlobalEventEmitter("sound").on("switch:active", function(_active) {
 	switcher_audio_active = bool(_active)
 });
-
-GlobalEventEmitter("ads").on("show", function() {
-	audio_pause_all();
-});

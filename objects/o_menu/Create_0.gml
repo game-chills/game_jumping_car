@@ -4,6 +4,9 @@
 sound_active = false;
 hint_already_visible = false;
 
+sound_ads_active = false;
+sound_ads_active_block = true;
+
 language = "en";
 
 ui = {
@@ -174,7 +177,18 @@ GlobalEventEmitter("menu").on("goto:apply:hint", function(_is_need_hint) {
 });
 
 GlobalReaderEmitter("sound").provider("active", function() {
-	return sound_active && window_has_focus();
+	return sound_active && !sound_ads_active;
+});
+
+GlobalReaderEmitter("sound").provider("resume", function() {
+	return sound_ads_active;
+});
+
+GlobalEventEmitter("ads").on("show", function() {
+	sound_ads_active = true;
+	sound_ads_active_block = true;
+	
+	alarm_set(0, 5);
 });
 
 GlobalEventEmitter("start").on("yes", function() {

@@ -1,6 +1,8 @@
 
-if (window_has_focus()) {
+if (GlobalReaderEmitter("sound").provider("resume", false)) {
 	audio_resume_all();	
+} else {
+	audio_pause_all();
 }
 
 if (switcher_audio_active) {
