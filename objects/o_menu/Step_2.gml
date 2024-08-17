@@ -34,4 +34,3 @@ if (ui.open) {
 	ui.alpha = lerp(ui.alpha, 1, _cf);
 	return;
 }
-   

@@ -10,15 +10,18 @@ if (!is_undefined(ui.transition)) {
 if (ads_mode.active) {
 	
 	{
-		--ads_mode.time_curr;
-		if (ads_mode.time_curr < 0) {
+		if (--ads_mode.time_curr < 0) {
 			ads_mode.available = false;
 			ads_mode.active = false;
 			
-			ui.alpha = 0;
-			
 			GlobalEventEmitter("ads").emit("show");
+			GlobalEventEmitter("pause").emit("set", true);
 			GlobalEventEmitter("menu").emit("click:play");
+			
+			ui.open = true;
+			ui.active = true;
+			ui.alpha = 1;
+			ui.menu_type = "continue";
 		}
 	}
 	
@@ -94,6 +97,22 @@ if (ui.menu_type == "hint") {
 
 }
 
+if (ui.menu_type == "continue") {
+	
+	ui.button_continue = {
+		x: _cam_w / 2,
+		y: _cam_h / 2,
+		x1: _cam_w / 2 - _button_width / 2,
+		x2: _cam_w / 2 + _button_width / 2,
+		y1: _cam_h / 2 - 32 - _button_height / 2,
+		y2: _cam_h / 2 - 32 + _button_height / 2,
+		sprite: _button_sprite,
+		text: t(language, "cont"),
+		type: "continue",
+	}
+
+}
+
 if (!ui.active) {
 	return;
 }
@@ -107,13 +126,20 @@ if (ui.menu_type == "main") {
 		ui.button_sound_off,
 	);
 	
-
 }
 
 if (ui.menu_type == "hint") {
 	
 	array_push(_buttons,
 		ui.button_hint_okey,
+	);
+	
+}
+
+if (ui.menu_type == "continue") {
+	
+	array_push(_buttons,
+		ui.button_continue,
 	);
 	
 }

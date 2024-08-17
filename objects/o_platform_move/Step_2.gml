@@ -1,5 +1,9 @@
 event_inherited();
 
+if (GlobalReaderEmitter("pause").request("pause", false)) {
+	return;
+}
+
 var _distance = vec2(x, y).distance_to(vec2(move_x, move_y));
 
 var _vector = vec2_line(x, y, move_x, move_y)

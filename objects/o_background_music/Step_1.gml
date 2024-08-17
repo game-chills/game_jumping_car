@@ -1,12 +1,8 @@
 
-if (GlobalReaderEmitter("sound").request("resume", false)) {
-	audio_resume_all();	
-	
-	show_debug_message("sound resume")
-} else {
+if (GlobalReaderEmitter("pause").request("pause", false)) {
 	audio_pause_all();
-	
-	show_debug_message("sound pause")
+} else {
+	audio_resume_all();
 }
 
 if (switcher_audio_active) {

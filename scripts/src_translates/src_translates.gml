@@ -11,6 +11,7 @@ function t(_lang, _key) {
 			hint_right_mobile: "Для движения вправо жми\nна правую часть экрана",
 			hint_teleport: "Если машинка\nвыйдет за экран, то\nтелепортируется \nс другой стороны",
 			ads: "Реклама через: ",
+			cont: "Продолжить",
 		},
 		en: {
 			play: "Play",
@@ -22,6 +23,7 @@ function t(_lang, _key) {
 			hint_right_mobile: "Tap the right side of\nthe screen to move right",
 			hint_teleport: "If the car goes off\nthe screen, it will\nteleport to the other side",
 			ads: "Advertising via: ",
+			cont: "Continue",
 		},
 		tr: {
 			play: "Oynamak",
@@ -33,6 +35,7 @@ function t(_lang, _key) {
 			hint_right_mobile: "Sağa gitmek için ekranın\nsağ tarafına dokunun",
 			hint_teleport: "Araba ekranın dışına\nçıktığında diğer tarafa\nteleport olur",
 			ads: "Şununla reklam ver: ",
+			cont: "Devam etmek",
 		},
 	};
 	

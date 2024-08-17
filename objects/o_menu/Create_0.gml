@@ -4,9 +4,6 @@
 sound_active = false;
 hint_already_visible = false;
 
-sound_ads_active = false;
-sound_ads_active_block = true;
-
 language = "en";
 
 ui = {
@@ -18,6 +15,7 @@ ui = {
 	button_play: undefined,
 	button_sound_off: undefined,
 	button_hint_okey: undefined,
+	button_continue: undefined,
 }
 
 ads_mode = {
@@ -154,6 +152,16 @@ GlobalEventEmitter("menu").on("click", function(_type) {
 		
 		return;
 	}
+	
+	if (_type == "continue") {
+		
+		GlobalEventEmitter("pause").emit("set", false);
+		
+		ui.open = false;
+		
+		return;
+	}
+	
 });
 
 GlobalEventEmitter("ads").on("show:available", function() {
@@ -168,6 +176,7 @@ GlobalEventEmitter("menu").on("click:play", function() {
 
 GlobalEventEmitter("game").on("dead", function() {
 	ui.open = true;
+	ui.menu_type = "main";
 });
 
 GlobalEventEmitter("menu").on("goto:apply:hint", function(_is_need_hint) {
@@ -177,18 +186,7 @@ GlobalEventEmitter("menu").on("goto:apply:hint", function(_is_need_hint) {
 });
 
 GlobalReaderEmitter("sound").provider("active", function() {
-	return sound_active && !sound_ads_active;
-});
-
-GlobalReaderEmitter("sound").provider("resume", function() {
-	return !sound_ads_active;
-});
-
-GlobalEventEmitter("ads").on("show", function() {
-	sound_ads_active = true;
-	sound_ads_active_block = true;
-	
-	alarm_set(0, 5); 
+	return sound_active;
 });
 
 GlobalEventEmitter("start").on("yes", function() {

@@ -61,6 +61,7 @@
     {"id":{"name":"o_line_painter","path":"objects/o_line_painter/o_line_painter.yy",},},
     {"id":{"name":"o_loader","path":"objects/o_loader/o_loader.yy",},},
     {"id":{"name":"o_menu","path":"objects/o_menu/o_menu.yy",},},
+    {"id":{"name":"o_pause","path":"objects/o_pause/o_pause.yy",},},
     {"id":{"name":"o_platform_disposable","path":"objects/o_platform_disposable/o_platform_disposable.yy",},},
     {"id":{"name":"o_platform_first","path":"objects/o_platform_first/o_platform_first.yy",},},
     {"id":{"name":"o_platform_fragile","path":"objects/o_platform_fragile/o_platform_fragile.yy",},},
