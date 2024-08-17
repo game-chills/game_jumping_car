@@ -181,14 +181,14 @@ GlobalReaderEmitter("sound").provider("active", function() {
 });
 
 GlobalReaderEmitter("sound").provider("resume", function() {
-	return sound_ads_active;
+	return !sound_ads_active;
 });
 
 GlobalEventEmitter("ads").on("show", function() {
 	sound_ads_active = true;
 	sound_ads_active_block = true;
 	
-	alarm_set(0, 5);
+	alarm_set(0, 5); 
 });
 
 GlobalEventEmitter("start").on("yes", function() {
