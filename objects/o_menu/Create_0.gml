@@ -21,7 +21,7 @@ ui = {
 ads_mode = {
 	available: false,
 	active: false,
-	time_max: room_speed * 3,
+	time_max: room_speed * 2,
 	time_curr: 0,
 }
 
