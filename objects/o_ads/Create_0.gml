@@ -4,7 +4,7 @@ game_ready_req_id = YaGames_GameReadyOn()
 ads_ready_timeout = false;
 ads_ready_dead = 2;
 
-ads_minutes = 1.5;
+ads_minutes = 3;
 
 alarm_set(0, room_speed * 60 * ads_minutes);
 
